@@ -1,140 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tracking Link Generator</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    background: #f9f9f9;
-    color: #333;
-  }
-  h1 {
-    text-align: center;
-    color: #007bff;
-  }
-  label {
-    font-weight: bold;
-  }
-  input[type="text"] {
-    width: 100%;
-    padding: 0.5em;
-    margin: 0.5em 0 1em 0;
-    font-size: 1em;
-  }
-  button {
-    background: #007bff;
-    border: none;
-    color: white;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  button:hover {
-    background: #0056b3;
-  }
-  #generatedLink {
-    margin-top: 1em;
-    word-break: break-all;
-    background: #eaf4ff;
-    padding: 0.7em;
-    border-radius: 4px;
-  }
-  #locationInfo {
-    margin-top: 1em;
-    padding: 1em;
-    background: #dee7ff;
-    border-radius: 6px;
-  }
-  a {
-    color: #007bff;
-  }
-</style>
+  <title>Sejarah Dunia Lengkap</title>
 </head>
-<body>
-  <h1>Tracking Link Generator</h1>
+<body bgcolor="#f0f8ff">
 
-  <div id="createLinkSection" style="display:none;">
-    <p><strong>Tracking Link:</strong></p>
-    <div id="generatedLink"></div>
-    <p>Share this link to track location of visitors.</p>
-  </div>
+<!-- HEADER / JUDUL -->
+<table width="100%" bgcolor="#4682b4" cellpadding="20">
+  <tr>
+    <td align="center">
+      <font size="6" color="white"><b>🌍 SEJARAH DUNIA</b></font><br>
+      <font size="4" color="white"><i>Dari Awal Peradaban Hingga Era Modern</i></font>
+    </td>
+  </tr>
+</table>
 
-  <div id="homeSection">
-    <label for="linkIdInput">Enter tracking ID (any identifier):</label>
-    <input type="text" id="linkIdInput" placeholder="Example: campaign1" />
-    <button id="generateBtn">Generate Tracking Link</button>
-  </div>
+<!-- ARTIKEL UTAMA -->
+<br>
+<center><font size="5"><b>1. Zaman Prasejarah (sebelum 3000 SM)</b></font></center>
+<p align="center">
+  <font size="4">
+    Manusia purba mulai muncul jutaan tahun yang lalu. Mereka hidup secara nomaden dengan berburu dan meramu. 
+    Bukti kehidupan awal ditemukan di Afrika, dikenal sebagai "buaian umat manusia".
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Homo_erectus.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Zaman_prasejarah">Baca lebih lanjut</a>
+</center>
 
-  <div id="trackSection" style="display:none;">
-    <h2>Your Location is:</h2>
-    <div id="locationInfo">Loading location data...</div>
-  </div>
+<br><br>
+<center><font size="5"><b>2. Zaman Kuno (3000 SM – 500 M)</b></font></center>
+<p align="center">
+  <font size="4">
+    Peradaban besar seperti Mesir Kuno, Mesopotamia, Yunani, dan Romawi berkembang. 
+    Ilmu pengetahuan, hukum, dan seni mulai tumbuh pesat pada masa ini.
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Mesir_Kuno">Baca tentang Mesir</a>
+</center>
 
-<script>
-  (function(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const trackId = urlParams.get('track');
+<br><br>
+<center><font size="5"><b>3. Abad Pertengahan (500 – 1500 M)</b></font></center>
+<p align="center">
+  <font size="4">
+    Eropa mengalami Zaman Kegelapan, namun peradaban Islam berkembang pesat di Timur Tengah. 
+    Di Asia, Tiongkok dan India mencapai masa kejayaan budaya dan teknologi.
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Umayyad_Mosque_Courtyard%2C_Damascus%2C_Syria_01.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Abad_Pertengahan">Baca tentang Abad Pertengahan</a>
+</center>
 
-    const homeSection = document.getElementById('homeSection');
-    const createLinkSection = document.getElementById('createLinkSection');
-    const generatedLinkDiv = document.getElementById('generatedLink');
-    const generateBtn = document.getElementById('generateBtn');
-    const linkIdInput = document.getElementById('linkIdInput');
-    const trackSection = document.getElementById('trackSection');
-    const locationInfo = document.getElementById('locationInfo');
+<br><br>
+<center><font size="5"><b>4. Zaman Penjelajahan & Kolonialisme (1500 – 1800 M)</b></font></center>
+<p align="center">
+  <font size="4">
+    Bangsa Eropa mulai menjelajahi dunia, menemukan benua baru dan membentuk koloni di Asia, Afrika, dan Amerika. 
+    Perdagangan dan pertukaran budaya pun meningkat.
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Columbus_Taking_Possession.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Zaman_penjelajahan">Selengkapnya</a>
+</center>
 
-    function getLocationByIP() {
-      // Using free IP geolocation API ipapi.co
-      fetch('https://ipapi.co/json/')
-        .then((response) => response.json())
-        .then((data) => {
-          if(data.error) {
-            locationInfo.textContent = 'Could not retrieve location data.';
-            return;
-          }
-          let info = `IP: ${data.ip}\n`;
-          if(trackId) info += `Tracking ID: ${trackId}\n`;
-          info += `City: ${data.city}\nRegion: ${data.region}\nCountry: ${data.country_name}\nLatitude: ${data.latitude}\nLongitude: ${data.longitude}`;
-          locationInfo.textContent = info;
-          // Optionally send this info somewhere or log it via backend
-        })
-        .catch(() => {
-          locationInfo.textContent = 'Failed to fetch location information.';
-        });
-    }
+<br><br>
+<center><font size="5"><b>5. Revolusi Industri & Modern (1800 – 1945)</b></font></center>
+<p align="center">
+  <font size="4">
+    Revolusi industri membawa perubahan besar dalam teknologi dan ekonomi. 
+    Perang Dunia I dan II pun menjadi konflik global yang mengubah dunia secara drastis.
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_on_Iwo_Jima.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Perang_Dunia_II">Baca tentang Perang Dunia</a>
+</center>
 
-    if(trackId) {
-      // If opened with ?track= param, show location tracking page
-      homeSection.style.display = 'none';
-      createLinkSection.style.display = 'none';
-      trackSection.style.display = 'block';
-      getLocationByIP();
-    } else {
-      // Show home - create link UI
-      homeSection.style.display = 'block';
-      createLinkSection.style.display = 'none';
-      trackSection.style.display = 'none';
+<br><br>
+<center><font size="5"><b>6. Era Kontemporer (1945 – Sekarang)</b></font></center>
+<p align="center">
+  <font size="4">
+    Setelah Perang Dunia II, dunia memasuki era Perang Dingin, teknologi digital, dan globalisasi. 
+    Tantangan baru seperti perubahan iklim dan konflik regional terus berkembang.
+  </font>
+</p>
+<center>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/ISS-65_International_Space_Station_Flyaround.jpg" width="300"><br>
+  <a href="https://id.wikipedia.org/wiki/Sejarah_dunia">Lihat Sejarah Modern</a>
+</center>
 
-      generateBtn.addEventListener('click', () => {
-        let id = linkIdInput.value.trim();
-        if(!id) {
-          alert('Please enter a valid tracking ID.');
-          return;
-        }
-        const loc = window.location;
-        // create a url with ?track=id param
-        const link = loc.protocol + '//' + loc.host + loc.pathname + '?track=' + encodeURIComponent(id);
-        generatedLinkDiv.textContent = link;
-        createLinkSection.style.display = 'block';
-      });
-    }
-  })();
-</script>
+<!-- KOTAK PENUTUP (SEPERTI KOTAK ATAS) -->
+<br><br>
+<table width="100%" bgcolor="#4682b4" cellpadding="20">
+  <tr>
+    <td align="center">
+      <font size="5" color="white"><b>📚 Terima kasih telah membaca</b></font><br>
+      <font size="4" color="white"><i>Semoga sejarah ini memberi wawasan baru untukmu</i></font>
+    </td>
+  </tr>
+</table>
+
+<!-- FOOTER -->
+<br>
+<center><font size="3"><b>© 2025 Website Sejarah Dunia | HTML Dasar oleh Mahasiswa</b></font></center>
+
 </body>
 </html>
